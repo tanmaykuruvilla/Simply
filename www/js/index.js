@@ -45,5 +45,26 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+
+        app.displayDeviceInfo();
+    },
+
+    openDialer: function(number) {
+        console.log("Dialer Opening ...." + number);
+        window.open('tel:'+ number, '_system');
+    },
+
+    openMessenger: function() {
+        console.log("Messenger Opening ....");
+        window.open('sms:', '_system');
+    },
+
+    displayDeviceInfo: function() {
+        $("#deviceinfo").html('Cordova Version ' + device.cordova + '<br>');
+        $("#deviceinfo").append('Model '+ device.model + '<br>');
+        $("#deviceinfo").append('Platform '+ device.platform + '<br>');
+        $("#deviceinfo").append('Manufacturer '+device.manufacturer );
     }
+
 };
+

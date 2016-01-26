@@ -38,10 +38,28 @@
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/jquery-1.12.0.min.js"></script>
+
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
+        <a href="https://www.google.com/" onclick="window.open('https://www.google.com/', '_system');">go to google.com</a>
+        <br>
+        <br>
         <a href="testpg.html"> Click To Go to test page </a>
+        <br>
+        <br>
+        <button data-val="tel:9999" onclick="app.openDialer('')">Make A Phone Call</button>
+        <br>
+        <br>
+        <button onclick="app.openMessenger()" class="button">Send Messages </button>
+        <br>
+        <br>
+        <br>
+        <button data-val="tel:9999" onclick="app.openDialer('000000')">Mobile For All Support </button>
+        <br>
+        <br>
+        <div id="deviceinfo"></div>
     </body>
 </html>
