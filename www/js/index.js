@@ -84,6 +84,12 @@ var app = {
     
     cameraError: function (message) {
         console.log("ERROR in CAMERA");
+    },
+
+    toggleFlashlight: function () {
+        // alert("flashlight ");
+        // window.plugins.flashlight.available(function(isAvailable) {});
+        window.plugins.flashlight.toggle();
     }
             
 };

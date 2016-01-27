@@ -51,7 +51,7 @@
         <a href="testpg.html"> Click To Go to test page </a>
         <br>
         <br>
-        <button data-val="tel:9999" onclick="app.openDialer('')">Make A Phone Call</button>
+        <button onclick="app.openDialer('')">Make A Phone Call</button>
         <br>
         <br>
         <button onclick="app.openMessenger()" class="button">Send Messages </button>
@@ -67,5 +67,9 @@
         <br>
         <br>
         <div id="batteryinfo" class="pull-right"></div>
+        <div id="deviceinfo"></div>
+        <br>
+        <br>
+        <button onclick="app.toggleFlashlight()"> Flashlight </button>
     </body>
 </html>
