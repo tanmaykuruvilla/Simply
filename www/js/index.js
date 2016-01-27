@@ -76,7 +76,7 @@ var app = {
         console.log("In battery status.....")
         $("#batteryinfo").html('Level: ' + info.level + '%<br>');
         $("#batteryinfo").append('Plugged: '+ info.isPlugged + '<br>');     
-    }
+    },
 
     cameraSuccess: function(imageURI) {
             console.log("Camera Opening...." + imageURI);
