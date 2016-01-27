@@ -64,7 +64,19 @@ var app = {
         $("#deviceinfo").append('Model '+ device.model + '<br>');
         $("#deviceinfo").append('Platform '+ device.platform + '<br>');
         $("#deviceinfo").append('Manufacturer '+device.manufacturer );
-    }
+    },
 
+    openCamera: function() {
+        navigator.camera.getPicture(app.cameraSuccess, app.cameraError, {destinationType: Camera.DestinationType.FILE_URL, saveToPhotoAlbum: true});
+    },
+
+    cameraSuccess: function(imageURI) {
+            console.log("Camera Opening...." + imageURI);
+    },
+    
+    cameraError: function (message) {
+        console.log("ERROR in CAMERA");
+    }
+            
 };
 
