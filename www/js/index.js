@@ -34,6 +34,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        //add a listener to watch the battery status.
+        window.addEventListener('batterystatus', app.displayBatteryInfo, false);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -69,6 +71,12 @@ var app = {
     openCamera: function() {
         navigator.camera.getPicture(app.cameraSuccess, app.cameraError, {destinationType: Camera.DestinationType.FILE_URL, saveToPhotoAlbum: true});
     },
+
+    displayBatteryInfo: function(info) {
+        console.log("In battery status.....")
+        $("#batteryinfo").html('Level: ' + info.level + '%<br>');
+        $("#batteryinfo").append('Plugged: '+ info.isPlugged + '<br>');     
+    }
 
     cameraSuccess: function(imageURI) {
             console.log("Camera Opening...." + imageURI);
