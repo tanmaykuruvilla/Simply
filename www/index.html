@@ -26,7 +26,7 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi, minimal-ui/" >
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <title>Test</title>
@@ -47,12 +47,10 @@
         <button class="halftile lefttile" onclick="app.openCamera()"><i class="fa fa-camera"></i><br>Camera</button>
 		<button class="halftile righttile" onclick="app.toggleFlashlight()"> Flashlight </button>
         <a href="https://www.google.com/" onclick="window.open('https://www.google.com/', '_system');"><button class="tiles">Browser</button></a>
-        <div id="deviceinfo" class="pull-left"></div>
-        <br>
-        <br>
-        <div id="batteryinfo" class="pull-right"></div>
-        <div id="deviceinfo"></div>
-        <br>
-        <br>
+		<button class="halftile righttile"> Settings </button>
+		<button class="halftile lefttile"> Wifi </button>
+		<button class="tiles"> Videos </button>
+		<button class="tiles"> Music </button>
+        <footer id="batteryinfo" class="pull-right"></footer>     
     </body>
 </html>
