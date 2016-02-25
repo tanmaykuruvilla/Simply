@@ -33,9 +33,13 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        console.log("on deviceready........");
+        // app.receivedEvent('deviceready');
         //add a listener to watch the battery status.
-        window.addEventListener('batterystatus', app.displayBatteryInfo, false);
+        // window.removeEventListener('batterystatus',{});
+        console.log("Adding batterystatus........");
+        window.addEventListener('batterystatus', app.displayBatteryStatus, false);
+        
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -48,7 +52,6 @@ var app = {
 
         console.log('Received Event: ' + id);
 
-        app.displayDeviceInfo();
     },
 
     openDialer: function(number) {
@@ -72,8 +75,8 @@ var app = {
         navigator.camera.getPicture(app.cameraSuccess, app.cameraError, {destinationType: Camera.DestinationType.FILE_URL, saveToPhotoAlbum: true});
     },
 
-    displayBatteryInfo: function(info) {
-        console.log("In battery status.....")
+    displayBatteryStatus: function(info) {
+        console.log("In battery status function.....")
         $("#batteryinfo").html('Level: ' + info.level + '%<br>');
         $("#batteryinfo").append('Plugged: '+ info.isPlugged + '<br>');     
     },
