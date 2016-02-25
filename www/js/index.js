@@ -39,7 +39,10 @@ var app = {
         // window.removeEventListener('batterystatus',{});
         console.log("Adding batterystatus........");
         window.addEventListener('batterystatus', app.displayBatteryStatus, false);
-        
+        document.addEventListener("backbutton", function() {
+                console.log("Back Button Pressed....")
+                window.plugins.flashlight.switchOff();
+        }, false);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -90,8 +93,6 @@ var app = {
     },
 
     toggleFlashlight: function () {
-        // alert("flashlight ");
-        // window.plugins.flashlight.available(function(isAvailable) {});
         window.plugins.flashlight.toggle();
     }
             
