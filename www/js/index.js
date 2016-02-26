@@ -33,7 +33,6 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        console.log("on deviceready........");
         // app.receivedEvent('deviceready');
         //add a listener to watch the battery status.
         // window.removeEventListener('batterystatus',{});
@@ -79,14 +78,13 @@ var app = {
     },
 
     displayBatteryStatus: function(info) {
-        console.log("In battery status function.....")
         $("#batteryinfo").html('Level: ' + info.level + '%<br>');
         if(info.isPlugged)
             $("#batteryinfo").append('Charging... <br>');     
     },
 
     cameraSuccess: function(imageURI) {
-            console.log("Camera Opening...." + imageURI);
+        console.log("Camera Opening...." + imageURI);
     },
     
     cameraError: function (message) {
