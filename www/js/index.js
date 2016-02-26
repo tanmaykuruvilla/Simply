@@ -18,27 +18,27 @@
  */
 var app = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
         this.bindEvents();
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
+    bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
+    onDeviceReady: function () {
         app.receivedEvent('deviceready');
         //add a listener to watch the battery status.
         window.addEventListener('batterystatus', app.displayBatteryInfo, false);
     },
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
+    receivedEvent: function (id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -50,47 +50,54 @@ var app = {
 
         app.displayDeviceInfo();
     },
-
-    openDialer: function(number) {
+    openDialer: function (number) {
         console.log("Dialer Opening ...." + number);
-        window.open('tel:'+ number, '_system');
+        window.open('tel:' + number, '_system');
     },
-
-    openMessenger: function() {
+    openMessenger: function () {
         console.log("Messenger Opening ....");
         window.open('sms:', '_system');
     },
-
-    displayDeviceInfo: function() {
-        $("#deviceinfo").html('Cordova Version ' + device.cordova + '<br>');
-        $("#deviceinfo").append('Model '+ device.model + '<br>');
-        $("#deviceinfo").append('Platform '+ device.platform + '<br>');
-        $("#deviceinfo").append('Manufacturer '+device.manufacturer );
+    openSettings: function () {
+        var successCallback = function (data) {
+            alert("Success!");
+            // if calling canLaunch() with getAppList:true, data will contain an array named "appList" with the package names of applications that can handle the uri specified.
+        };
+        var errorCallback = function (errMsg) {
+            alert("Error! " + errMsg);
+        };
+        try {
+            console.log("Settings Opening ....");
+            window.plugins.launcher.launch({packageName:'android.provider.Settings'}, successCallback, errorCallback);
+        } catch (err) {
+              console.log(err);
+        }
     },
-
-    openCamera: function() {
+    displayDeviceInfo: function () {
+        $("#deviceinfo").html('Cordova Version ' + device.cordova + '<br>');
+        $("#deviceinfo").append('Model ' + device.model + '<br>');
+        $("#deviceinfo").append('Platform ' + device.platform + '<br>');
+        $("#deviceinfo").append('Manufacturer ' + device.manufacturer);
+    },
+    openCamera: function () {
         navigator.camera.getPicture(app.cameraSuccess, app.cameraError, {destinationType: Camera.DestinationType.FILE_URL, saveToPhotoAlbum: true});
     },
-
-    displayBatteryInfo: function(info) {
+    displayBatteryInfo: function (info) {
         console.log("In battery status.....")
         $("#batteryinfo").html('Level: ' + info.level + '%<br>');
-        $("#batteryinfo").append('Plugged: '+ info.isPlugged + '<br>');     
+        $("#batteryinfo").append('Plugged: ' + info.isPlugged + '<br>');
     },
-
-    cameraSuccess: function(imageURI) {
-            console.log("Camera Opening...." + imageURI);
+    cameraSuccess: function (imageURI) {
+        console.log("Camera Opening...." + imageURI);
     },
-    
     cameraError: function (message) {
         console.log("ERROR in CAMERA");
     },
-
     toggleFlashlight: function () {
         // alert("flashlight ");
         // window.plugins.flashlight.available(function(isAvailable) {});
         window.plugins.flashlight.toggle();
     }
-            
+
 };
 
