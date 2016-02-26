@@ -40,8 +40,8 @@ var app = {
         console.log("Adding batterystatus........");
         window.addEventListener('batterystatus', app.displayBatteryStatus, false);
         document.addEventListener("backbutton", function() {
-                console.log("Back Button Pressed....")
                 window.plugins.flashlight.switchOff();
+                navigator.app.exitApp();
         }, false);
     },
     // Update DOM on a Received Event
@@ -81,7 +81,8 @@ var app = {
     displayBatteryStatus: function(info) {
         console.log("In battery status function.....")
         $("#batteryinfo").html('Level: ' + info.level + '%<br>');
-        $("#batteryinfo").append('Plugged: '+ info.isPlugged + '<br>');     
+        if(info.isPlugged)
+            $("#batteryinfo").append('Charging... <br>');     
     },
 
     cameraSuccess: function(imageURI) {
