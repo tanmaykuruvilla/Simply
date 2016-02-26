@@ -68,7 +68,7 @@ var app = {
         };
         try {
             console.log("Settings Opening ....");
-            window.plugins.launcher.launch({packageName:'com.facebook.katana'}, successCallback, errorCallback);
+            window.plugins.launcher.launch({packageName:'com.android.settings'}, successCallback, errorCallback);
         } catch (err) {
               console.log(err);
         }
