@@ -134,7 +134,7 @@ button:focus {
 
 #main{
     height: 225vh;
-    font-size: 180%;
+    font-size: 2vh;
 }
 
 .tiles {
@@ -165,6 +165,10 @@ button:focus {
 	position:relative;
 	top:0px;
 	float:right;
+}
+
+.icon{
+    font-size: 10vh !important;
 }
 
 footer {

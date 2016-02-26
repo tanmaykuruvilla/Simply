@@ -78,7 +78,7 @@ var app = {
     },
 
     displayBatteryStatus: function(info) {
-        $("#batteryinfo").append('Level: ' + info.level + '%<br>');
+        $("#batteryinfo").html('<i class="fa fa-battery-three-quarters"> Level: ' + info.level + '%<br>');
         if(info.isPlugged)
             $("#batteryinfo").append('Charging... <br>');     
     },
