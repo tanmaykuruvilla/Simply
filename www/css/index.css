@@ -133,7 +133,7 @@ button:focus {
 }
 
 #main{
-    height: 225vh;
+    height: 222vh;
     font-size: 2vh;
 }
 
@@ -180,4 +180,6 @@ footer {
     border-top: 1px solid black;
     background: #6496c8;
 	box-shadow: inset 0 2px 2px 2px #27496d,inset 0 2px 2px #193047;
+    color: #fff;
+    text-align: center;
 }
