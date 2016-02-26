@@ -180,7 +180,7 @@ Ref: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
   and (min-device-width: 360dp) 
   and (max-device-width: 640dp)
   /*and (-webkit-min-device-pixel-ratio: 2) */{
-	  font-size: 30px;
+	  font-size: 100px;
 }
 
 /* ----------- iPhone 5 and 5S ----------- */
