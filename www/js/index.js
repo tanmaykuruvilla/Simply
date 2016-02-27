@@ -58,9 +58,10 @@ var app = {
         console.log("Messenger Opening ....");
         window.open('sms:', '_system');
     },
+    
     openSettings: function () {
         var successCallback = function (data) {
-            alert("Success!");
+            console.log("Success!");
             // if calling canLaunch() with getAppList:true, data will contain an array named "appList" with the package names of applications that can handle the uri specified.
         };
         var errorCallback = function (errMsg) {
@@ -73,6 +74,39 @@ var app = {
               console.log(err);
         }
     },
+    
+    openWiFiSettings: function () {
+        var successCallback = function (data) {
+            console.log("Success!");
+            // if calling canLaunch() with getAppList:true, data will contain an array named "appList" with the package names of applications that can handle the uri specified.
+        };
+        var errorCallback = function (errMsg) {
+            alert("Error! " + errMsg);
+        };
+        try {
+            console.log("Settings Opening ....");
+            window.plugins.launcher.launch({packageName:'com.android.settings.WirelessSettings'}, successCallback, errorCallback);
+        } catch (err) {
+              console.log(err);
+        }
+    },
+    
+    openMusicApp: function () {
+        var successCallback = function (data) {
+            console.log("Success!");
+            // if calling canLaunch() with getAppList:true, data will contain an array named "appList" with the package names of applications that can handle the uri specified.
+        };
+        var errorCallback = function (errMsg) {
+            alert("Error! " + errMsg);
+        };
+        try {
+            console.log("Settings Opening ....");
+            window.plugins.launcher.launch({packageName:'com.google.android.music'}, successCallback, errorCallback);
+        } catch (err) {
+              console.log(err);
+        }
+    },
+    
     displayDeviceInfo: function () {
         $("#deviceinfo").html('Cordova Version ' + device.cordova + '<br>');
         $("#deviceinfo").append('Model ' + device.model + '<br>');
