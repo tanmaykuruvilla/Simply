@@ -101,7 +101,7 @@ var app = {
         };
         try {
             console.log("Settings Opening ....");
-            window.plugins.launcher.launch({packageName:'com.google.android.music'}, successCallback, errorCallback);
+            window.plugins.launcher.launch({packageName:'android.intent.action.MUSIC_PLAYER'}, successCallback, errorCallback);
         } catch (err) {
               console.log(err);
         }
