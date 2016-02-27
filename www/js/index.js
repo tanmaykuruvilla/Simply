@@ -85,7 +85,7 @@ var app = {
         };
         try {
             console.log("Settings Opening ....");
-            window.plugins.launcher.launch({packageName:'com.android.settings.WirelessSettings'}, successCallback, errorCallback);
+            window.plugins.launcher.launch({packageName:'com.android.settings.wifi.WifiSettings'}, successCallback, errorCallback);
         } catch (err) {
               console.log(err);
         }
@@ -101,7 +101,7 @@ var app = {
         };
         try {
             console.log("Settings Opening ....");
-            window.plugins.launcher.launch({packageName:'android.intent.action.MUSIC_PLAYER'}, successCallback, errorCallback);
+            window.plugins.launcher.launch({packageName:'com.google.android.music'}, successCallback, errorCallback);
         } catch (err) {
               console.log(err);
         }
