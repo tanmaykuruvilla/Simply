@@ -79,14 +79,8 @@ var app = {
     },
     openWiFiSettings: function () {
         try {
-            var win = function(){
-                alert("Wifi on");
-            };
-            var fail = function(){
-                alert("Wifi off");
-            };
             console.log("Settings Opening ....");
-            WifiWizard.isWifiEnabled(win, fail);
+            
             
         } catch (err) {
             console.log(err);
