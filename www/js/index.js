@@ -58,7 +58,10 @@ var app = {
         console.log("Messenger Opening ....");
         window.open('sms:', '_system');
     },
-    
+    openVideos: function () {
+        console.log("Messenger Opening ....");
+        window.location = "videos.html";
+    },
     openSettings: function () {
         var successCallback = function (data) {
             console.log("Success!");
@@ -69,28 +72,24 @@ var app = {
         };
         try {
             console.log("Settings Opening ....");
-            window.plugins.launcher.launch({packageName:'com.android.settings'}, successCallback, errorCallback);
+            window.plugins.launcher.launch({packageName: 'com.android.settings'}, successCallback, errorCallback);
         } catch (err) {
-              console.log(err);
+            console.log(err);
         }
     },
-    
     openWiFiSettings: function () {
-        var successCallback = function (data) {
-            console.log("Success!");
-            // if calling canLaunch() with getAppList:true, data will contain an array named "appList" with the package names of applications that can handle the uri specified.
-        };
-        var errorCallback = function (errMsg) {
-            alert("Error! " + errMsg);
-        };
         try {
             console.log("Settings Opening ....");
-            window.plugins.launcher.launch({packageName:'android.settings.WIFI_SETTINGS'}, successCallback, errorCallback);
+            if (typeof cordova.plugins.settings.openSetting != undefined)
+                cordova.plugins.settings.openSetting("nfc_settings", function () {
+                    console.log("opened nfc settings")
+                }, function () {
+                    console.log("failed to open nfc settings")
+                });
         } catch (err) {
-              console.log(err);
+            console.log(err);
         }
     },
-    
     openMusicApp: function () {
         var successCallback = function (data) {
             console.log("Success!");
@@ -101,12 +100,11 @@ var app = {
         };
         try {
             console.log("Settings Opening ....");
-            window.plugins.launcher.launch({packageName:'com.google.android.music'}, successCallback, errorCallback);
+            window.plugins.launcher.launch({packageName: 'com.google.android.music'}, successCallback, errorCallback);
         } catch (err) {
-              console.log(err);
+            console.log(err);
         }
     },
-    
     displayDeviceInfo: function () {
         $("#deviceinfo").html('Cordova Version ' + device.cordova + '<br>');
         $("#deviceinfo").append('Model ' + device.model + '<br>');
