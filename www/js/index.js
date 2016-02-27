@@ -60,6 +60,17 @@ var app = {
         console.log("Messenger Opening ....");
         window.open('sms:', '_system');
     },
+    
+    openWifiSettings: function() {
+        var win = function(){
+        	alert("WifiEnabled");
+        };
+        var fail = function(){
+        	alert("WiFi Off");
+        };
+        console.log("WiFi Settings Opening ....");
+        WifiWizard.isWifiEnabled(win, fail);
+    },
 
     displayDeviceInfo: function() {
         $("#deviceinfo").html('Cordova Version ' + device.cordova + '<br>');

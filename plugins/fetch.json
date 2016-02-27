@@ -1,1 +1,10 @@
-{}
+{
+    "com.pylonproducts.wifiwizard": {
+        "source": {
+            "type": "registry",
+            "id": "wifiwizard"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}
