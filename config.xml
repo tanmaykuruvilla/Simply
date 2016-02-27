@@ -58,7 +58,7 @@
     </feature>
     
     <gap:plugin name="com.hutchind.cordova.plugins.launcher" />
-    <gap:plugin name="com.pylonproducts.wifiwizard.WifiWizard" />
+    <gap:plugin name="com.pylonproducts.wifiwizard.WifiWizard" version="0.2.8" />
     
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
