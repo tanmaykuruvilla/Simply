@@ -80,12 +80,7 @@ var app = {
     openWiFiSettings: function () {
         try {
             console.log("Settings Opening ....");
-            if (typeof cordova.plugins.settings.openSetting != undefined)
-                cordova.plugins.settings.openSetting("nfc_settings", function () {
-                    console.log("opened nfc settings")
-                }, function () {
-                    console.log("failed to open nfc settings")
-                });
+            
         } catch (err) {
             console.log(err);
         }
