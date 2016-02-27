@@ -91,6 +91,9 @@ var app = {
         // window.plugins.flashlight.available(function(isAvailable) {});
         window.plugins.flashlight.toggle();
     }
-            
+	
+	toggleFlashlightButton: function() { 
+	        $('#toggleButton').toggleClass('disableButton activeButton');
+    }   
 };
 
