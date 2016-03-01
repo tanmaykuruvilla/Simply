@@ -35,8 +35,6 @@ var app = {
     onDeviceReady: function() {
         // app.receivedEvent('deviceready');
         //add a listener to watch the battery status.
-        // window.removeEventListener('batterystatus',{});
-        console.log("Adding batterystatus........");
         window.addEventListener('batterystatus', app.displayBatteryStatus, false);
         document.addEventListener("backbutton", function() {
                 window.plugins.flashlight.switchOff();
