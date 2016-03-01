@@ -132,9 +132,14 @@ button:focus {
   outline: none
 }
 
+#main{
+    height: 220vh;
+    font-size: 2vh;
+}
+
 .tiles {
 	width: 100%;
-	height: 250px;
+	height: 28vh;
 	color: #fff;
 	background-color: #6496c8;
 	text-shadow: -1px 1px #417cb8;
@@ -143,7 +148,7 @@ button:focus {
 
 .halftile {
 	width: 50%;
-	height: 250px;
+	height: 35vh;
 	color: #fff;
 	background-color: #6496c8;
 	text-shadow: -1px 1px #417cb8;
@@ -162,6 +167,10 @@ button:focus {
 	float:right;
 }
 
+.icon{
+    font-size: 10vh !important;
+}
+
 footer {
     z-index: 2;
     position: fixed;
@@ -171,4 +180,6 @@ footer {
     border-top: 1px solid black;
     background: #6496c8;
 	box-shadow: inset 0 2px 2px 2px #27496d,inset 0 2px 2px #193047;
+    color: #fff;
+    text-align: center;
 }

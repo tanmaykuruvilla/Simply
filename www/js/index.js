@@ -33,9 +33,13 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        // app.receivedEvent('deviceready');
         //add a listener to watch the battery status.
-        window.addEventListener('batterystatus', app.displayBatteryInfo, false);
+        window.addEventListener('batterystatus', app.displayBatteryStatus, false);
+        document.addEventListener("backbutton", function() {
+                window.plugins.flashlight.switchOff();
+                navigator.app.exitApp();
+        }, false);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -48,7 +52,6 @@ var app = {
 
         console.log('Received Event: ' + id);
 
-        app.displayDeviceInfo();
     },
 
     openDialer: function(number) {
@@ -72,14 +75,14 @@ var app = {
         navigator.camera.getPicture(app.cameraSuccess, app.cameraError, {destinationType: Camera.DestinationType.FILE_URL, saveToPhotoAlbum: true});
     },
 
-    displayBatteryInfo: function(info) {
-        console.log("In battery status.....")
-        $("#batteryinfo").html('Level: ' + info.level + '%<br>');
-        $("#batteryinfo").append('Plugged: '+ info.isPlugged + '<br>');     
+    displayBatteryStatus: function(info) {
+        $("#batteryinfo").html('<i class="fa fa-battery-three-quarters"> Level: ' + info.level + '%<br>');
+        if(info.isPlugged)
+            $("#batteryinfo").append('Charging... <br>');     
     },
 
     cameraSuccess: function(imageURI) {
-            console.log("Camera Opening...." + imageURI);
+        console.log("Camera Opening...." + imageURI);
     },
     
     cameraError: function (message) {
@@ -87,8 +90,6 @@ var app = {
     },
 
     toggleFlashlight: function () {
-        // alert("flashlight ");
-        // window.plugins.flashlight.available(function(isAvailable) {});
         window.plugins.flashlight.toggle();
     }
             
