@@ -41,7 +41,7 @@ var app = {
                 window.plugins.flashlight.switchOff();
                 navigator.app.exitApp();
         }, false);
-        //auto start the app on phone boot
+        //auto start the app on phone boot  note: only works for android
         cordova.plugins.autoStart.enable();
     },
     // Update DOM on a Received Event
