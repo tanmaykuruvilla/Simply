@@ -36,10 +36,13 @@ var app = {
         // app.receivedEvent('deviceready');
         //add a listener to watch the battery status.
         window.addEventListener('batterystatus', app.displayBatteryStatus, false);
+        //switch of flashlight on exit using back button
         document.addEventListener("backbutton", function() {
                 window.plugins.flashlight.switchOff();
                 navigator.app.exitApp();
         }, false);
+        //auto start the app on phone boot  note: only works for android
+        cordova.plugins.autoStart.enable();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
