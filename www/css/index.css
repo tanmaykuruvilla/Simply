@@ -183,3 +183,11 @@ footer {
     color: #fff;
     text-align: center;
 }
+
+.clicked{
+    background-color: #27496d;
+}
+
+#button:hover {
+  background-color: #27496d;
+}

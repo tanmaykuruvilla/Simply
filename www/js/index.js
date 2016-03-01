@@ -90,6 +90,7 @@ var app = {
     },
 
     toggleFlashlight: function () {
+        $('#flashlight').toggleClass('clicked');
         window.plugins.flashlight.toggle();
     }
             
