@@ -183,3 +183,11 @@ footer {
     color: #fff;
     text-align: center;
 }
+
+.clicked{
+    background-color: #27496d;
+}
+
+button:active {
+  background-color: #27496d;
+}
