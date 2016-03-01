@@ -188,6 +188,6 @@ footer {
     background-color: #27496d;
 }
 
-#button:hover {
+button:active {
   background-color: #27496d;
 }
