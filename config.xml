@@ -43,6 +43,7 @@
     <gap:plugin name="org.apache.cordova.vibration" />
     <gap:plugin name="cordova-plugin-flashlight" source="npm" />
     <gap:plugin platform="android" name="cordova-plugin-autostart" version="2.0.1" source="npm"/>
+    <gap:plugin name="com.hutchind.cordova.plugins.launcher" />
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
