@@ -107,10 +107,25 @@ var app = {
         };
         try {
             console.log("Settings Opening ....");
-            window.plugins.launcher.launch({packageName: 'com.android.settings.wifi'}, successCallback, errorCallback);
+            window.plugins.launcher.launch({packageName: 'com.android.settings.wifi.WifiSettings'}, successCallback, errorCallback);
         } catch (err) {
             console.log(err);
         }
-    }
+    },
+
+    openMusic: function () {
+        var successCallback = function (data) {
+            // if calling canLaunch() with getAppList:true, data will contain an array named "appList" with the package names of applications that can handle the uri specified.
+        };
+        var errorCallback = function (errMsg) {
+            alert("Error! " + errMsg);
+        };
+        try {
+            window.plugins.launcher.launch({packageName: 'com.google.android.music'}, successCallback, errorCallback);
+        } catch (err) {
+            console.log(err);
+        }
+    },    
+
 };
 
