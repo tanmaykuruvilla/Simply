@@ -108,7 +108,6 @@ var app = {
         try {
             console.log("Settings Opening ....");
             window.plugins.launcher.launch({packageName: 'com.android.settings'}, successCallback, errorCallback);
-            alert("Please select 'wifi' from the list to see available wifi networks");
         } catch (err) {
             console.log(err);
         }
@@ -126,7 +125,22 @@ var app = {
         } catch (err) {
             console.log(err);
         }
-    },    
+    }, 
+
+    openWifi: function () {
+        var successCallback = function (data) {
+            alert('Please select wifi from the list to view available wifi networks');
+        };
+        var errorCallback = function (errMsg) {
+            alert("Error! " + errMsg);
+        };
+        try {
+            window.plugins.launcher.launch({packageName: 'com.android.settings'}, successCallback, errorCallback);
+        } catch (err) {
+            console.log(err);
+        }
+    }, 
+
 
 };
 
