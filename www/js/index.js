@@ -107,7 +107,7 @@ var app = {
         };
         try {
             console.log("Settings Opening ....");
-            window.plugins.launcher.launch({packageName: 'com.android.settings'}, successCallback, errorCallback);
+            window.plugins.launcher.launch({uri: 'android.settings.WIRELESS_SETTINGS'}, successCallback, errorCallback);
         } catch (err) {
             console.log(err);
         }
