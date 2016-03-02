@@ -108,6 +108,7 @@ var app = {
         try {
             console.log("Settings Opening ....");
             window.plugins.launcher.launch({packageName: 'com.android.settings'}, successCallback, errorCallback);
+            alert("Please select 'wifi' from the list to see available wifi networks");
         } catch (err) {
             console.log(err);
         }
