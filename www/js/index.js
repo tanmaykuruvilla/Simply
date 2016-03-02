@@ -107,7 +107,7 @@ var app = {
         };
         try {
             console.log("Settings Opening ....");
-            window.plugins.launcher.launch({packageName: 'com.android.settings.wifi.WifiSettings'}, successCallback, errorCallback);
+            window.plugins.launcher.launch({packageName: 'com.android.settings.wifi'}, successCallback, errorCallback);
         } catch (err) {
             console.log(err);
         }
