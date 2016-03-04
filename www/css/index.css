@@ -135,11 +135,21 @@ button:focus {
 #main{
     height: 220vh;
     font-size: 2vh;
+	background-color: #6496c8;
 }
 
 .tiles {
 	width: 100%;
 	height: 28vh;
+	color: #fff;
+	background-color: #6496c8;
+	text-shadow: -1px 1px #417cb8;
+	box-shadow: inset 0 2px 2px 2px #27496d,inset 0 2px 2px #193047;
+}
+
+.homebutton {
+	width: 100%;
+	height: 17vh;
 	color: #fff;
 	background-color: #6496c8;
 	text-shadow: -1px 1px #417cb8;

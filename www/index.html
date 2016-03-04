@@ -48,17 +48,19 @@
         <script type="text/javascript">
             app.initialize();
         </script>
-        <div id="main">        
+        <div id="main">   
+			<button class="homebutton"><i class="fa fa-home"></i><br>Home</button>   
             <button class="halftile lefttile" data-val="tel:9999" onclick="app.openDialer('')"><i class="fa fa-phone icon"></i><br>Call</button>
             <button class="halftile righttile" onclick="app.openMessenger()" class="button"><i class="fa fa-envelope-o icon"></i><br>Message</button>
-            <button class="tiles" onclick="app.openDialer('000000')"><i class="fa fa-question icon"></i><br>Mobile For All Support</button>
+			<button class="tiles"><i class="fa fa-video-camera"></i><br> Training Videos </button>
+            <button class="tiles" onclick="app.openDialer('4084510734')"><i class="fa fa-question icon"></i><br>Mobile For All Customer Service</button>
+			<button class="halftile righttile" onclick="app.openSettings()"><i class="fa fa-cogs icon"></i><br> Settings </button>    		
+			<button class="halftile lefttile"><i class="fa fa-wifi icon"></i><br> Wifi </button>
             <button class="halftile lefttile" onclick="app.openCamera()"><i class="fa fa-camera icon"></i><br>Camera</button>
     		<button id="flashlight" class="halftile righttile" onclick="app.toggleFlashlight()"><i class="fa fa-lightbulb-o icon"></i><br> Flashlight </button>
             <a onclick="window.open('https://www.google.com/', '_system');"><button class="tiles"><i class="fa fa-chrome icon"></i><br>Browser</button></a>
-    		<button class="halftile righttile" onclick="app.openSettings()"><i class="fa fa-cogs icon"></i><br> Settings </button>
-    		<button class="halftile lefttile"><i class="fa fa-wifi icon"></i><br> Wifi </button>
-    		<button class="tiles"><i class="fa fa-youtube icon"></i><br> Videos </button>
     		<button class="tiles" onclick="app.openMusic()"><i class="fa fa-music icon"></i><br> Music </button>
+			<button class="homebutton"><i class="fa fa-home"></i><br>Home</button>
             <footer id="batteryinfo"><i class="fa fa-battery-three-quarters"></i>
             </footer>     
         </div>
