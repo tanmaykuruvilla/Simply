@@ -125,7 +125,7 @@ var app = {
         } catch (err) {
             console.log(err);
         }
-    },    
+    }
 
 };
 
