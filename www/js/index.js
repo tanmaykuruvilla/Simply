@@ -112,7 +112,7 @@ var app = {
                     window.plugins.launcher.launch({packageName: 'com.android.settings'}, successCallback, errorCallback);
                     break;
                 case "music":
-                    window.plugins.launcher.launch({packageName: 'com.android.music'}, successCallback, errorCallback);
+                    window.plugins.launcher.launch({packageName: 'com.google.android.music'}, successCallback, errorCallback);
                     break;
                 case "wifi":
                     alert("Plase select WiFi from the list after hitting OK");   
