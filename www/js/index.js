@@ -125,6 +125,21 @@ var app = {
         } catch (err) {
             console.log(err);
         }
+    },
+
+    openWifi: function () {
+        var successCallback = function (data) {
+            // if calling canLaunch() with getAppList:true, data will contain an array named "appList" with the package names of applications that can handle the uri specified.
+        };
+        var errorCallback = function (errMsg) {
+            alert("Error! " + errMsg);
+        };
+        try {
+            alert("Select Wifi from the list you are about to see");
+            window.plugins.launcher.launch({packageName: 'com.google.android.music'}, successCallback, errorCallback);
+        } catch (err) {
+            console.log(err);
+        }
     }
 
 };
