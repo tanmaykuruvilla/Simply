@@ -177,7 +177,7 @@ button:focus {
 	float:right;
 }
 
-i {
+.icon {
     font-size: 10vh !important;
 }
 
