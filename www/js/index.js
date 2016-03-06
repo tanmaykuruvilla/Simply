@@ -74,22 +74,10 @@ var app = {
         $("#deviceinfo").append('Manufacturer '+device.manufacturer );
     },
 
-    openCamera: function() {
-        navigator.camera.getPicture(app.cameraSuccess, app.cameraError, {destinationType: Camera.DestinationType.FILE_URL, saveToPhotoAlbum: true});
-    },
-
     displayBatteryStatus: function(info) {
         $("#batteryinfo").html('<i class="fa fa-battery-three-quarters"> Level: ' + info.level + '%<br>');
         if(info.isPlugged)
             $("#batteryinfo").append('Charging... <br>');     
-    },
-
-    cameraSuccess: function(imageURI) {
-        console.log("Camera Opening...." + imageURI);
-    },
-    
-    cameraError: function (message) {
-        console.log("ERROR in CAMERA");
     },
 
     toggleFlashlight: function () {
@@ -118,6 +106,9 @@ var app = {
                     alert("Plase select WiFi from the list after hitting OK");   
                     window.plugins.launcher.launch({packageName: 'com.android.settings'}, successCallback, errorCallback);
                     break;
+                case "camera":
+                    window.plugins.launcher.launch({packageName: 'com.google.android.GoogleCamera'}, successCallback, errorCallback);
+                    break;   
                 default:
                     console.log("no support to open the application");    
             }
