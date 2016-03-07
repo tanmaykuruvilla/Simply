@@ -105,6 +105,9 @@ var app = {
         var errorCallback = function (errMsg) {
             alert("Error! " + errMsg);
         };
+		var alertDismissed = function() {
+			
+		};
         try {
             console.log("Settings Opening ....");
             switch(application){
@@ -115,7 +118,7 @@ var app = {
                     window.plugins.launcher.launch({packageName: 'com.google.android.music'}, successCallback, errorCallback);
                     break;
                 case "wifi":
-                    alert("Plase select WiFi from the list after hitting OK");   
+                    navigator.notification.alert("Please select WiFi from the list after hitting OK", alertDismissed, "WiFi");   
                     window.plugins.launcher.launch({packageName: 'com.android.settings'}, successCallback, errorCallback);
                     break;
                 default:
