@@ -128,7 +128,7 @@ var app = {
                     navigator.notification.confirm("Please select \"WiFi\" from the list after hitting OK", confirmAction, "WiFi");
                     break;
                 case "data":
-                    navigator.notification.confirm("Please select \"Data Usage\" from the list after hitting OK", confirmAction, "Data");
+                    navigator.notification.confirm("Please select \"Data Usage\" from the list after hitting OK", confirmAction, "Data Usage");
 					break;
                 default:
                     console.log("no support to open the application");    
