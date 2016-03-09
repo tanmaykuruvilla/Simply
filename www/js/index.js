@@ -123,8 +123,7 @@ var app = {
                     window.plugins.launcher.launch({packageName: 'com.google.android.music'}, successCallback, errorCallback);
                     break;
                 case "wifi":
-                    navigator.notification.confirm("Please select WiFi from the list after hitting OK", null, "WiFi");   
-                    
+                    navigator.notification.alert("Please select WiFi from the list after hitting OK", null, "WiFi");
                     break;
                 default:
                     console.log("no support to open the application");    
