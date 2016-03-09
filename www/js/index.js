@@ -125,7 +125,7 @@ var app = {
                     break;
                 case "wifi":
                     navigator.notification.alert("Please select WiFi from the list after hitting OK", alertDismissed, "WiFi");
-					
+					window.plugins.launcher.launch({packageName: 'com.android.settings'}, successCallback, errorCallback);
                     break;
                 default:
                     console.log("no support to open the application");    
