@@ -91,6 +91,11 @@ var app = {
     cameraError: function (message) {
         console.log("ERROR in CAMERA");
     },
+    
+    openVideos: function () {
+        console.log("Messenger Opening ....");
+        window.location = "videos.html";
+    },
 
     toggleFlashlight: function () {
         $('#flashlight').toggleClass('clicked');
