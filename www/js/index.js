@@ -111,7 +111,7 @@ var app = {
             alert("Error! " + errMsg);
         };
 		var alertDismissed = function() {
-			window.plugins.launcher.launch({packageName: 'com.android.settings'}, successCallback, errorCallback);
+			
 		};
         try {
             console.log("Settings Opening ....");
@@ -123,7 +123,8 @@ var app = {
                     window.plugins.launcher.launch({packageName: 'com.google.android.music'}, successCallback, errorCallback);
                     break;
                 case "wifi":
-                    navigator.notification.alert("Please select WiFi from the list after hitting OK", alertDismissed, "WiFi");
+                    navigator.notification.alert("Please select WiFi from the list after hitting OK", null, "WiFi");
+					window.plugins.launcher.launch({packageName: 'com.android.settings'}, successCallback, errorCallback);
                     break;
                 default:
                     console.log("no support to open the application");    
