@@ -110,8 +110,7 @@ var app = {
         var errorCallback = function (errMsg) {
             alert("Error! " + errMsg);
         };
-		var alertDismissed = function(buttonIndex) {
-			console.log("Alert dismissed");
+		var confirmAction = function(buttonIndex) {
 			if(buttonIndex === 1) {
 				window.plugins.launcher.launch({packageName: 'com.android.settings'}, successCallback, errorCallback);
 			}
@@ -126,9 +125,11 @@ var app = {
                     window.plugins.launcher.launch({packageName: 'com.google.android.music'}, successCallback, errorCallback);
                     break;
                 case "wifi":
-                    navigator.notification.confirm("Please select WiFi from the list after hitting OK", alertDismissed, "WiFi");
-					//window.plugins.launcher.launch({packageName: 'com.android.settings'}, successCallback, errorCallback);
+                    navigator.notification.confirm("Please select \"WiFi\" from the list after hitting OK", confirmAction, "WiFi");
                     break;
+                case "data":
+                    navigator.notification.confirm("Please select \"Data Usage\" from the list after hitting OK", confirmAction, "Data");
+					break;
                 default:
                     console.log("no support to open the application");    
             }
