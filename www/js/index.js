@@ -92,10 +92,10 @@ var app = {
         console.log("ERROR in CAMERA");
     },
     
-    /*openVideos: function () {
+    openVideos: function () {
         console.log("Messenger Opening ....");
         window.location = "videos.html";
-    },*/
+    },
 
     toggleFlashlight: function () {
         $('#flashlight').toggleClass('clicked');
@@ -129,10 +129,11 @@ var app = {
         } catch (err) {
             console.log(err);
         }
-    }/*,
+    },
 	
 	takeBackToApp: function() {
 		window.location = "index.html";
-	}*/
+		window.addEventListener('batterystatus', app.displayBatteryStatus, false);
+	}
 };
 
