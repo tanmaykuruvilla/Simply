@@ -225,6 +225,7 @@ button:active {
 video {
 	width:100%;
 	height:240;
+	padding-bottom:7vh;
 }
 
 .back {
