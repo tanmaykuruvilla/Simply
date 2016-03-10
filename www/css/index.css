@@ -217,6 +217,16 @@ button:active {
 	background: #6496c8;
 }
 
+#video1{
+	position:relative;
+	top:7vh;
+}
+
+video {
+	width:320;
+	height:240;
+}
+
 .back {
 	padding:0px;
 	margin:0px;
