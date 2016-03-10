@@ -133,7 +133,7 @@ var app = {
 	
 	takeBackToApp: function() {
 		window.location = "index.html";
-		window.addEventListener('batterystatus', app.displayBatteryStatus, false);
+		this.displayBatteryStatus();
 	}
 };
 
