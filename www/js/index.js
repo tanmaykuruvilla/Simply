@@ -129,6 +129,11 @@ var app = {
         } catch (err) {
             console.log(err);
         }
-    }
+    },
+	
+	takeBackToApp: function() {
+		window.location = "index.html";
+		this.displayBatteryStatus();
+	}
 };
 
